@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" font-family="system-ui, sans-serif">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a3c6d"/>
+      <stop offset="100%" stop-color="#2a5f9e"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2c5f2d"/>
+      <stop offset="100%" stop-color="#4a8f4b"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e65100"/>
+      <stop offset="100%" stop-color="#f57c00"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#455a64"/>
+      <stop offset="100%" stop-color="#607d8b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="620" fill="#f5f7fa" rx="8"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" font-size="16" font-weight="700" fill="#1a3c6d">SHM System Architecture — Highway Bridges (India)</text>
+
+  <!-- Layer 1: Sensor Layer -->
+  <rect x="30" y="60" width="840" height="100" rx="6" fill="#fff" stroke="#1a3c6d" stroke-width="1.5"/>
+  <rect x="30" y="60" width="840" height="28" rx="6" fill="url(#g1)"/>
+  <rect x="30" y="82" width="840" height="6" fill="url(#g1)"/>
+  <text x="450" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">SENSOR LAYER</text>
+
+  <!-- Sensor boxes -->
+  <rect x="50" y="100" width="90" height="26" rx="4" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+  <text x="95" y="117" text-anchor="middle" font-size="10" fill="#1a3c6d">Accelerometers</text>
+
+  <rect x="150" y="100" width="85" height="26" rx="4" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+  <text x="192" y="117" text-anchor="middle" font-size="10" fill="#1a3c6d">Strain Gauges</text>
+
+  <rect x="245" y="100" width="60" height="26" rx="4" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+  <text x="275" y="117" text-anchor="middle" font-size="10" fill="#1a3c6d">Tilt Meters</text>
+
+  <rect x="315" y="100" width="80" height="26" rx="4" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+  <text x="355" y="117" text-anchor="middle" font-size="10" fill="#1a3c6d">Displacement</text>
+
+  <rect x="405" y="100" width="80" height="26" rx="4" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+  <text x="445" y="117" text-anchor="middle" font-size="10" fill="#1a3c6d">Temperature</text>
+
+  <rect x="495" y="100" width="70" height="26" rx="4" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+  <text x="530" y="117" text-anchor="middle" font-size="10" fill="#1a3c6d">Corrosion</text>
+
+  <rect x="575" y="100" width="60" height="26" rx="4" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+  <text x="605" y="117" text-anchor="middle" font-size="10" fill="#1a3c6d">Scour</text>
+
+  <rect x="645" y="100" width="55" height="26" rx="4" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+  <text x="672" y="117" text-anchor="middle" font-size="10" fill="#1a3c6d">GNSS</text>
+
+  <rect x="710" y="100" width="50" height="26" rx="4" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+  <text x="735" y="117" text-anchor="middle" font-size="10" fill="#1a3c6d">WIM</text>
+
+  <rect x="770" y="100" width="90" height="26" rx="4" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+  <text x="815" y="117" text-anchor="middle" font-size="10" fill="#1a3c6d">CCTV/Weather</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="450" y1="162" x2="450" y2="190" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="465" y="178" font-size="9" fill="#888">Signal cables / Fibre backbone</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Layer 2: DAQ & Edge -->
+  <rect x="30" y="195" width="840" height="100" rx="6" fill="#fff" stroke="#2c5f2d" stroke-width="1.5"/>
+  <rect x="30" y="195" width="840" height="28" rx="6" fill="url(#g2)"/>
+  <rect x="30" y="217" width="840" height="6" fill="url(#g2)"/>
+  <text x="450" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">DAQ &amp; EDGE LAYER</text>
+
+  <rect x="50" y="235" width="200" height="26" rx="4" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="0.8"/>
+  <text x="150" y="252" text-anchor="middle" font-size="10" fill="#2c5f2d">Distributed DAQ Nodes (24-bit ADC)</text>
+
+  <rect x="270" y="235" width="170" height="26" rx="4" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="0.8"/>
+  <text x="355" y="252" text-anchor="middle" font-size="10" fill="#2c5f2d">Fibre-Optic Ring (G.652.D)</text>
+
+  <rect x="460" y="235" width="160" height="26" rx="4" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="0.8"/>
+  <text x="540" y="252" text-anchor="middle" font-size="10" fill="#2c5f2d">On-Site Server (Linux, RAID-5)</text>
+
+  <rect x="640" y="235" width="100" height="26" rx="4" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="0.8"/>
+  <text x="690" y="252" text-anchor="middle" font-size="10" fill="#2c5f2d">UPS (4 hr backup)</text>
+
+  <rect x="755" y="235" width="100" height="26" rx="4" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="0.8"/>
+  <text x="805" y="252" text-anchor="middle" font-size="10" fill="#2c5f2d">IP66 Enclosures</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="450" y1="297" x2="450" y2="325" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="465" y="315" font-size="9" fill="#888">4G/5G/VSAT + IPsec VPN</text>
+
+  <!-- Layer 3: Cloud & Analytics -->
+  <rect x="30" y="330" width="840" height="100" rx="6" fill="#fff" stroke="#e65100" stroke-width="1.5"/>
+  <rect x="30" y="330" width="840" height="28" rx="6" fill="url(#g3)"/>
+  <rect x="30" y="352" width="840" height="6" fill="url(#g3)"/>
+  <text x="450" y="350" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">CLOUD &amp; ANALYTICS LAYER</text>
+
+  <rect x="50" y="370" width="130" height="26" rx="4" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/>
+  <text x="115" y="387" text-anchor="middle" font-size="10" fill="#e65100">Kafka / MQTT Stream</text>
+
+  <rect x="195" y="370" width="130" height="26" rx="4" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/>
+  <text x="260" y="387" text-anchor="middle" font-size="10" fill="#e65100">TimescaleDB Storage</text>
+
+  <rect x="340" y="370" width="120" height="26" rx="4" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/>
+  <text x="400" y="387" text-anchor="middle" font-size="10" fill="#e65100">OMA Engine (SSI-COV)</text>
+
+  <rect x="475" y="370" width="130" height="26" rx="4" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/>
+  <text x="540" y="387" text-anchor="middle" font-size="10" fill="#e65100">3-Tier Alarm Engine</text>
+
+  <rect x="620" y="370" width="100" height="26" rx="4" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/>
+  <text x="670" y="387" text-anchor="middle" font-size="10" fill="#e65100">REST API</text>
+
+  <rect x="735" y="370" width="120" height="26" rx="4" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/>
+  <text x="795" y="387" text-anchor="middle" font-size="10" fill="#e65100">TLS 1.3 + IPsec</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="450" y1="432" x2="450" y2="460" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Layer 4: Consumer -->
+  <rect x="30" y="465" width="840" height="100" rx="6" fill="#fff" stroke="#455a64" stroke-width="1.5"/>
+  <rect x="30" y="465" width="840" height="28" rx="6" fill="url(#g4)"/>
+  <rect x="30" y="487" width="840" height="6" fill="url(#g4)"/>
+  <text x="450" y="485" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">CONSUMER &amp; INTEGRATION LAYER</text>
+
+  <rect x="50" y="505" width="140" height="26" rx="4" fill="#eceff1" stroke="#455a64" stroke-width="0.8"/>
+  <text x="120" y="522" text-anchor="middle" font-size="10" fill="#455a64">Web Dashboard</text>
+
+  <rect x="205" y="505" width="110" height="26" rx="4" fill="#eceff1" stroke="#455a64" stroke-width="0.8"/>
+  <text x="260" y="522" text-anchor="middle" font-size="10" fill="#455a64">SMS / Email Alerts</text>
+
+  <rect x="330" y="505" width="120" height="26" rx="4" fill="#eceff1" stroke="#455a64" stroke-width="0.8"/>
+  <text x="390" y="522" text-anchor="middle" font-size="10" fill="#455a64">NHAI BMS Integration</text>
+
+  <rect x="465" y="505" width="110" height="26" rx="4" fill="#eceff1" stroke="#455a64" stroke-width="0.8"/>
+  <text x="520" y="522" text-anchor="middle" font-size="10" fill="#455a64">Digital Twin</text>
+
+  <rect x="590" y="505" width="100" height="26" rx="4" fill="#eceff1" stroke="#455a64" stroke-width="0.8"/>
+  <text x="640" y="522" text-anchor="middle" font-size="10" fill="#455a64">Mobile App</text>
+
+  <rect x="705" y="505" width="150" height="26" rx="4" fill="#eceff1" stroke="#455a64" stroke-width="0.8"/>
+  <text x="780" y="522" text-anchor="middle" font-size="10" fill="#455a64">Automated Reports (PDF)</text>
+
+  <!-- Side Labels -->
+  <!-- Level indicators on the left -->
+  <text x="15" y="115" text-anchor="middle" font-size="9" fill="#666" transform="rotate(-90,15,115)">11 sensor categories</text>
+  <text x="15" y="250" text-anchor="middle" font-size="9" fill="#666" transform="rotate(-90,15,250)">< 10ms failover</text>
+  <text x="15" y="385" text-anchor="middle" font-size="9" fill="#666" transform="rotate(-90,15,385)">India-hosted cloud</text>
+  <text x="15" y="520" text-anchor="middle" font-size="9" fill="#666" transform="rotate(-90,15,520)">Multi-channel delivery</text>
+
+  <!-- Footer -->
+  <text x="450" y="600" text-anchor="middle" font-size="9" fill="#aaa">Conceptual Architecture — For illustrative purposes only. Does not represent internal implementation.</text>
+</svg>

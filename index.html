@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHM Bridge Specification — Project Showcase | NebulaCloud Studio</title>
+<meta name="description" content="Professional technical specification for Structural Health Monitoring of highway bridges in India, aligned with IRC, MORTH, and NHAI standards.">
+<style>
+  :root {
+    --primary: #1a3c6d;
+    --primary-light: #2a5f9e;
+    --secondary: #2c5f2d;
+    --accent: #e65100;
+    --bg: #f8fafb;
+    --card: #fff;
+    --text: #1a1a2e;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --radius: 8px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-lg: 0 4px 16px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.06);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', 'Noto Sans', system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.65;
+  }
+
+  /* Nav */
+  .nav {
+    background: var(--primary);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .nav-logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+  .nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #fff; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, #0d2240 100%);
+    color: #fff;
+    padding: 60px 24px;
+    text-align: center;
+  }
+  .hero h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); margin-bottom: 12px; line-height: 1.3; }
+  .hero .sub { font-size: 1.1rem; color: rgba(255,255,255,0.75); margin-bottom: 24px; }
+  .hero .badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+  }
+
+  /* Container */
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+  /* Sections */
+  section { padding: 48px 0; }
+  section:nth-child(even) { background: #fff; }
+  section:nth-child(odd)  { background: var(--bg); }
+  h2 { font-size: 1.5rem; color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid var(--primary); padding-bottom: 8px; display: inline-block; }
+  h3 { font-size: 1.15rem; color: var(--secondary); margin: 20px 0 8px; }
+
+  /* Cards */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+  .card h4 { font-size: 1rem; color: var(--primary); margin-bottom: 6px; }
+  .card p  { font-size: 0.9rem; color: var(--muted); }
+  .stat-card {
+    text-align: center;
+    padding: 20px 16px;
+  }
+  .stat-card .number { font-size: 2rem; font-weight: 800; color: var(--accent); }
+  .stat-card .label { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+
+  /* Output cards */
+  .output-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .output-card .icon { font-size: 2rem; flex-shrink: 0; }
+  .output-card .info h4 { margin: 0 0 4px; font-size: 1rem; }
+  .output-card .info span { font-size: 0.82rem; color: var(--muted); }
+  .btn {
+    display: inline-block;
+    padding: 10px 22px;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: var(--primary-light); }
+  .btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+  .btn-outline:hover { background: var(--primary); color: #fff; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 12px 0; }
+  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { background: var(--primary); color: #fff; font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  tr:nth-child(even) td { background: #f8fafc; }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 12px 20px;
+    margin: 20px 0;
+    background: #fff3e0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-style: italic;
+  }
+  blockquote strong { color: var(--accent); }
+
+  /* Architecture diagram */
+  .arch-diagram {
+    width: 100%;
+    max-width: 800px;
+    margin: 16px auto;
+    display: block;
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--primary);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #3b82f6; text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .hero { padding: 40px 16px; }
+    section { padding: 32px 0; }
+    .output-card { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <a href="#" class="nav-logo">NebulaCloud Studio</a>
+  <div class="nav-links">
+    <a href="#overview">Overview</a>
+    <a href="#outputs">Outputs</a>
+    <a href="#features">Features</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#users">Users</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <h1>Structural Health Monitoring<br>of Highway Bridges — India</h1>
+  <p class="sub">A comprehensive 13-section technical specification aligned with IRC, MORTH, and NHAI standards</p>
+  <div class="badges">
+    <span class="badge">22 Standards Referenced</span>
+    <span class="badge">11 Sensor Types</span>
+    <span class="badge">3 SHM Levels</span>
+    <span class="badge">30+ Specification Tables</span>
+    <span class="badge">HTML + DOCX Outputs</span>
+  </div>
+</header>
+
+<!-- Overview -->
+<section id="overview">
+  <div class="container">
+    <h2>Project Overview</h2>
+    <p style="max-width:700px;font-size:1.05rem;">
+      India has over <strong>1,70,000 bridges</strong> on its National Highway network. As infrastructure ages and traffic loads intensify beyond design assumptions,
+      traditional visual inspections can no longer provide the real-time structural insight needed for safety-critical decision-making.
+    </p>
+    <p style="max-width:700px;margin-top:12px;">
+      This project delivers a <strong>fully-structured technical specification document</strong> that bridges the gap between
+      existing IRC inspection codes and modern Structural Health Monitoring (SHM) deployment — covering everything from
+      sensor specifications to cloud architecture, alarm protocols, and procurement frameworks.
+    </p>
+
+    <div class="grid-3" style="margin-top:28px;">
+      <div class="card stat-card">
+        <div class="number">13</div>
+        <div class="label">IRC / MORTH / BIS Standards Referenced</div>
+      </div>
+      <div class="card stat-card">
+        <div class="number">9</div>
+        <div class="label">International Standards (ISO, SAMCO, FHWA)</div>
+      </div>
+      <div class="card stat-card">
+        <div class="number">11</div>
+        <div class="label">Sensor Categories Fully Specified</div>
+      </div>
+      <div class="card stat-card">
+        <div class="number">3</div>
+        <div class="label">Tier Alarm Protocol with Indian Thresholds</div>
+      </div>
+      <div class="card stat-card">
+        <div class="number">7</div>
+        <div class="label">Commissioning Tests with Acceptance Criteria</div>
+      </div>
+      <div class="card stat-card">
+        <div class="number">539</div>
+        <div class="label">Sensors in Sample Cable-Stayed Bridge Schedule</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Business Problem -->
+<section id="problem">
+  <div class="container">
+    <h2>The Business Problem</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h4>No Unified SHM Standard</h4>
+        <p>Existing IRC codes cover inspection (SP:35) and design but lack a consolidated SHM procurement and deployment specification for Indian bridges.</p>
+      </div>
+      <div class="card">
+        <h4>Fragmented Procurement</h4>
+        <p>Each bridge project reinvents SHM requirements, leading to inconsistent quality, non-interoperable systems, and vendor lock-in.</p>
+      </div>
+      <div class="card">
+        <h4>Missing Indian-Context Alarm Framework</h4>
+        <p>No standardised threshold definitions exist for Indian traffic loads, seismic zones (II–V), and monsoon weather conditions.</p>
+      </div>
+      <div class="card">
+        <h4>Integration Gap</h4>
+        <p>SHM data rarely feeds into NHAI's Bridge Management System or the National Bridge Inventory, limiting its value for asset management.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Generated Outputs -->
+<section id="outputs">
+  <div class="container">
+    <h2>Generated Outputs</h2>
+    <p style="margin-bottom:20px;">Two delivery formats generated from a single authoritative specification — ready for immediate use in tenders and technical review.</p>
+
+    <div class="grid-2">
+      <div class="output-card">
+        <div class="icon">&#x1F310;</div>
+        <div class="info">
+          <h4>Interactive Web View (HTML/CSS)</h4>
+          <span>68 KB &bull; Browser-based with print-optimised layout &bull; Responsive &bull; Internal navigation</span>
+          <br><br>
+          <a href="assets/outputs/SHM_Bridge_Specification_India.html" class="btn" target="_blank">Open in Browser</a>
+        </div>
+      </div>
+      <div class="output-card">
+        <div class="icon">&#x1F4C4;</div>
+        <div class="info">
+          <h4>Professional Document (DOCX)</h4>
+          <span>53 KB &bull; Editable in Microsoft Word &bull; Full formatting &bull; Tables &bull; Callout boxes</span>
+          <br><br>
+          <a href="assets/outputs/SHM_Bridge_Specification_India.docx" class="btn btn-outline">Download DOCX</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Features -->
+<section id="features">
+  <div class="container">
+    <h2>Key Features</h2>
+
+    <h3>Section-by-Section Coverage</h3>
+    <table>
+      <tr><th style="width:10%">Section</th><th>Content</th></tr>
+      <tr><td><strong>1–3</strong></td><td>Introduction, scope by bridge type (6 categories), standardised definitions (12 terms)</td></tr>
+      <tr><td><strong>4</strong></td><td>22 normative references — 13 Indian standards (IRC/MORTH/BIS) + 9 international (ISO/SAMCO/FHWA)</td></tr>
+      <tr><td><strong>5</strong></td><td>Risk-based SHM classification (R = S × C × V × D × Re), 3 monitoring levels, sensor deployment by bridge type</td></tr>
+      <tr><td><strong>6</strong></td><td>Full specs for 11 sensor types with Indian-environment hardening (−10°C to +70°C, IP68, IEC 62305 lightning)</td></tr>
+      <tr><td><strong>7</strong></td><td>Distributed DAQ architecture, fibre backbone, 4G/5G/VSAT, cloud platform (India-hosted), data security (TLS 1.3, IPsec)</td></tr>
+      <tr><td><strong>8</strong></td><td>Real-time processing, automated OMA (SSI-COV), 3-tier alarm protocol with Indian-optimised default thresholds</td></tr>
+      <tr><td><strong>9</strong></td><td>Installation methodology, junction box/cable specs, 7 commissioning tests, 90-day baseline acquisition period</td></tr>
+      <tr><td><strong>10</strong></td><td>O&M contract schedule (sensor calibration, FE model updates, annual audits), data ownership & handover</td></tr>
+      <tr><td><strong>11</strong></td><td>5 automated report types (daily to post-event), IRC:SP:35 inspection integration, compliance checklist</td></tr>
+      <tr><td><strong>12</strong></td><td>Vendor eligibility criteria (5 factors), QCBS-based bid evaluation matrix (90 technical + 10 financial points)</td></tr>
+      <tr><td><strong>13</strong></td><td>Sample sensor schedule for 250m cable-stayed bridge (539 sensors, 15 categories), abbreviation glossary</td></tr>
+    </table>
+
+    <h3>India-Specific Engineering Adaptation</h3>
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="card">
+        <h4>&#x1F3D4;&#xFE0F; Environmental Hardening</h4>
+        <p>Sensors specified for −10°C to +70°C (Himalayan winter to Thar Desert summer), IP68 for monsoon flooding, and 0–100% RH condensing conditions.</p>
+      </div>
+      <div class="card">
+        <h4>&#x26A1; Lightning Protection</h4>
+        <p>Full lightning/surge protection per IEC 62305 with air termination rods, equipotential bonding, and SPDs at every junction box — critical for Indian monsoon lightning zones.</p>
+      </div>
+      <div class="card">
+        <h4>&#x1F4CD; NavIC GNSS</h4>
+        <p>Multi-constellation GNSS receivers specified with GPS + GLONASS + <strong>NavIC</strong> (India's regional navigation system) + Galileo for sovereign positioning capability.</p>
+      </div>
+      <div class="card">
+        <h4>&#x1F4E6; Data Localisation</h4>
+        <p>Cloud platform on MeitY-empanelled providers with data centres in India, compliant with IT Act 2000 and data localisation requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Architecture -->
+<section id="architecture">
+  <div class="container">
+    <h2>Architecture Overview</h2>
+    <p style="margin-bottom:16px;">Conceptual 4-layer architecture showing SHM system components and data flow. Implementation details are intentionally not included in this public showcase.</p>
+
+    <img src="assets/diagrams/architecture.svg" alt="SHM System Architecture Diagram" class="arch-diagram" loading="lazy">
+
+    <blockquote>
+      <strong>Note:</strong> This diagram represents the conceptual system architecture described in the technical specification. The actual implementation architecture, including specific service topologies, database schemas, and deployment configurations, is proprietary and not included in this showcase.
+    </blockquote>
+  </div>
+</section>
+
+<!-- Intended Users -->
+<section id="users">
+  <div class="container">
+    <h2>Intended Users & Use Cases</h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>NHAI / MORTH Project Directors</h4>
+        <p>Insert directly into tender documents as the SHM technical schedule. Provides a standardised, defensible procurement framework.</p>
+      </div>
+      <div class="card">
+        <h4>Concessionaires & EPC Contractors</h4>
+        <p>Budget, procure, and deploy compliant SHM systems using the defined sensor specs, DAQ architecture, and O&M schedules.</p>
+      </div>
+      <div class="card">
+        <h4>SHM System Integrators</h4>
+        <p>Bid against transparent, standardised evaluation criteria (Section 12). No more guessing what the authority wants.</p>
+      </div>
+      <div class="card">
+        <h4>Independent Engineers</h4>
+        <p>Verify SHM system design, commissioning tests, and ongoing performance against a single, authoritative reference document.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:32px;">Example Scenarios</h3>
+    <table>
+      <tr><th>Scenario</th><th>How the Specification Is Used</th></tr>
+      <tr>
+        <td><strong>New Expressway (45 bridges)</strong></td>
+        <td>Apply Section 2 classification matrix → determine Level-1/2/3 for each bridge → Section 6 sensor specs → Section 12 procurement</td>
+      </tr>
+      <tr>
+        <td><strong>Ageing Bridge Retrofit (NH-44)</strong></td>
+        <td>Section 5.1 risk scoring → justify Level-2 SHM → Section 6.2.2 VW strain gauges for long-term monitoring → Section 8.3 intervention triggers</td>
+      </tr>
+      <tr>
+        <td><strong>Cable-Stayed Bridge Tender</strong></td>
+        <td>Annexure A sample schedule (539 sensors) → adapt Section 9.3 commissioning tests → Section 10.2 O&M for concession period</td>
+      </tr>
+      <tr>
+        <td><strong>Post-Earthquake Assessment (Zone V)</strong></td>
+        <td>Section 8.3 Red-tier alarm at 0.05g → Section 8.2 automated OMA before/after comparison → Section 11.1 post-event report within 72 hours</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- Technical Scope -->
+<section id="scope">
+  <div class="container">
+    <h2>Technical Scope & Limitations</h2>
+
+    <div class="grid-2">
+      <div style="padding-right:16px;">
+        <h3>In Scope</h3>
+        <ul style="margin-top:8px;">
+          <li>Instrumentation specifications for 11 sensor categories</li>
+          <li>Data acquisition, communication, storage, and security architecture</li>
+          <li>Alert thresholds, alarm protocols, and reporting templates</li>
+          <li>Installation, commissioning, calibration, O&M, and handover procedures</li>
+          <li>Bid evaluation and vendor qualification framework</li>
+        </ul>
+      </div>
+      <div style="padding-left:16px;">
+        <h3>Out of Scope</h3>
+        <ul style="margin-top:8px;">
+          <li>Detailed structural design of any specific bridge</li>
+          <li>FE model creation or calibration methodology</li>
+          <li>Software development specifications beyond interface requirements</li>
+          <li>Cost estimation or bill of quantities</li>
+          <li>Legal or contractual terms beyond technical specification</li>
+        </ul>
+      </div>
+    </div>
+
+    <blockquote>
+      <strong>Important:</strong> Default thresholds in Section 8.3 are advisory. Project-specific thresholds must be derived from structural analysis by the design consultant. The risk classification matrix in Section 5.1 is a guideline — NHAI/MORTH may mandate higher SHM levels for specific bridges.
+    </blockquote>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section style="background: linear-gradient(135deg, var(--primary) 0%, #0d2240 100%); color: #fff;">
+  <div class="container">
+    <h2 style="color:#fff; border-bottom-color: rgba(255,255,255,0.3);">Call to Action</h2>
+    <p style="font-size:1.1rem; max-width:700px;">
+      Are you working on bridge infrastructure projects in India? This specification can be adapted for your specific requirements — with project-specific sensor schedules, site-adapted thresholds, or integration with your existing Bridge Management System.
+    </p>
+    <p style="margin-top:16px; font-size:1.05rem;">
+      &#x1F4E7; <strong>support@nebulacloud.studio</strong> &nbsp;|&nbsp; &#x1F310; <strong>https://nebulacloud.studio</strong>
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>Built with <a href="https://nebulacloud.studio">NebulaCloud Studio</a></p>
+  <p style="margin-top:6px;font-size:0.78rem;">This showcase repository contains public portfolio materials only. Source code, implementation details, and proprietary workflows are not included.</p>
+  <p style="margin-top:4px;font-size:0.78rem;">Referenced engineering standards remain the property of their respective governing bodies (IRC, MORTH, BIS, ISO, etc.).</p>
+</footer>
+
+</body>
+</html>
