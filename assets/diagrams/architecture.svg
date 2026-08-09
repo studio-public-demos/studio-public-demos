@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" style="background:#f5f7fa;font-family:system-ui,-apple-system,sans-serif">
+
+  <defs>
+    <linearGradient id="h1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a3c6d"/>
+      <stop offset="100%" stop-color="#2a5f9e"/>
+    </linearGradient>
+    <linearGradient id="h2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2c5f2d"/>
+      <stop offset="100%" stop-color="#4a8f4b"/>
+    </linearGradient>
+    <linearGradient id="h3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e65100"/>
+      <stop offset="100%" stop-color="#f57c00"/>
+    </linearGradient>
+    <linearGradient id="h4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#455a64"/>
+      <stop offset="100%" stop-color="#607d8b"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5f6368"/>
+    </marker>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="480" y="34" text-anchor="middle" font-size="14" font-weight="700" fill="#1a3c6d">SHM System Architecture — Highway Bridges (India)</text>
+
+  <!-- ====== LAYER 1: SENSOR ====== -->
+  <g transform="translate(40, 56)">
+    <rect x="0" y="0" width="880" height="120" rx="8" fill="#ffffff" stroke="#1a3c6d" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="880" height="32" rx="8" fill="url(#h1)"/>
+    <rect x="0" y="24" width="880" height="8" fill="url(#h1)"/>
+    <text x="440" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">SENSOR LAYER</text>
+
+    <!-- Row 1 -->
+    <g transform="translate(14, 44)">
+      <rect x="0" y="0" width="130" height="30" rx="6" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+      <text x="65" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#1a3c6d">Accelerometers</text>
+
+      <rect x="142" y="0" width="120" height="30" rx="6" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+      <text x="202" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#1a3c6d">Strain Gauges</text>
+
+      <rect x="274" y="0" width="90" height="30" rx="6" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+      <text x="319" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#1a3c6d">Tilt Meters</text>
+
+      <rect x="376" y="0" width="110" height="30" rx="6" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+      <text x="431" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#1a3c6d">Displacement</text>
+
+      <rect x="498" y="0" width="110" height="30" rx="6" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+      <text x="553" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#1a3c6d">Temperature</text>
+
+      <rect x="620" y="0" width="100" height="30" rx="6" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+      <text x="670" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#1a3c6d">Corrosion</text>
+
+      <rect x="732" y="0" width="70" height="30" rx="6" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+      <text x="767" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#1a3c6d">Scour</text>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(14, 80)">
+      <rect x="0" y="0" width="80" height="30" rx="6" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+      <text x="40" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#1a3c6d">GNSS</text>
+
+      <rect x="92" y="0" width="80" height="30" rx="6" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+      <text x="132" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#1a3c6d">WIM</text>
+
+      <rect x="184" y="0" width="120" height="30" rx="6" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+      <text x="244" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#1a3c6d">CCTV / Weather</text>
+
+      <rect x="316" y="0" width="130" height="30" rx="6" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+      <text x="381" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#1a3c6d">Seismic Accel</text>
+
+      <rect x="458" y="0" width="130" height="30" rx="6" fill="#e8f0fe" stroke="#1a3c6d" stroke-width="0.8"/>
+      <text x="523" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#1a3c6d">Corrosion Probe</text>
+    </g>
+  </g>
+
+  <!-- Arrow 1→2 -->
+  <line x1="480" y1="178" x2="480" y2="208" stroke="#5f6368" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="500" y="195" font-size="10" fill="#80868b">Signal cables / Fibre backbone</text>
+
+  <!-- ====== LAYER 2: DAQ & EDGE ====== -->
+  <g transform="translate(40, 214)">
+    <rect x="0" y="0" width="880" height="94" rx="8" fill="#ffffff" stroke="#2c5f2d" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="880" height="32" rx="8" fill="url(#h2)"/>
+    <rect x="0" y="24" width="880" height="8" fill="url(#h2)"/>
+    <text x="440" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">DAQ &amp; EDGE LAYER</text>
+
+    <g transform="translate(14, 44)">
+      <rect x="0" y="0" width="195" height="30" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="0.8"/>
+      <text x="97" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#2c5f2d">Distributed DAQ Nodes · 24‑bit ADC</text>
+
+      <rect x="208" y="0" width="160" height="30" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="0.8"/>
+      <text x="288" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#2c5f2d">Fibre‑Optic Ring · G.652.D</text>
+
+      <rect x="381" y="0" width="170" height="30" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="0.8"/>
+      <text x="466" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#2c5f2d">On‑Site Server · Linux · RAID‑5</text>
+
+      <rect x="564" y="0" width="110" height="30" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="0.8"/>
+      <text x="619" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#2c5f2d">UPS · 4 hr Backup</text>
+
+      <rect x="687" y="0" width="110" height="30" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="0.8"/>
+      <text x="742" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#2c5f2d">IP66 Enclosures</text>
+    </g>
+  </g>
+
+  <!-- Arrow 2→3 -->
+  <line x1="480" y1="310" x2="480" y2="340" stroke="#5f6368" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="500" y="327" font-size="10" fill="#80868b">4G / 5G / VSAT &amp; IPsec VPN</text>
+
+  <!-- ====== LAYER 3: CLOUD & ANALYTICS ====== -->
+  <g transform="translate(40, 346)">
+    <rect x="0" y="0" width="880" height="94" rx="8" fill="#ffffff" stroke="#e65100" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="880" height="32" rx="8" fill="url(#h3)"/>
+    <rect x="0" y="24" width="880" height="8" fill="url(#h3)"/>
+    <text x="440" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">CLOUD &amp; ANALYTICS LAYER</text>
+
+    <g transform="translate(14, 44)">
+      <rect x="0" y="0" width="130" height="30" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/>
+      <text x="65" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#e65100">MQTT / Kafka Stream</text>
+
+      <rect x="142" y="0" width="130" height="30" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/>
+      <text x="207" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#e65100">TimescaleDB Storage</text>
+
+      <rect x="284" y="0" width="120" height="30" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/>
+      <text x="344" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#e65100">OMA Engine · SSI‑COV</text>
+
+      <rect x="416" y="0" width="130" height="30" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/>
+      <text x="481" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#e65100">3‑Tier Alarm Engine</text>
+
+      <rect x="558" y="0" width="100" height="30" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/>
+      <text x="608" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#e65100">REST API Layer</text>
+
+      <rect x="670" y="0" width="130" height="30" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/>
+      <text x="735" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#e65100">TLS 1.3 · IPsec · RBAC</text>
+    </g>
+  </g>
+
+  <!-- Arrow 3→4 -->
+  <line x1="480" y1="442" x2="480" y2="472" stroke="#5f6368" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="500" y="459" font-size="10" fill="#80868b">Data for dashboards, alerts, and external systems</text>
+
+  <!-- ====== LAYER 4: CONSUMER & INTEGRATION ====== -->
+  <g transform="translate(40, 478)">
+    <rect x="0" y="0" width="880" height="94" rx="8" fill="#ffffff" stroke="#455a64" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="880" height="32" rx="8" fill="url(#h4)"/>
+    <rect x="0" y="24" width="880" height="8" fill="url(#h4)"/>
+    <text x="440" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">CONSUMER &amp; INTEGRATION LAYER</text>
+
+    <g transform="translate(14, 44)">
+      <rect x="0" y="0" width="140" height="30" rx="6" fill="#eceff1" stroke="#455a64" stroke-width="0.8"/>
+      <text x="70" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#455a64">Web Dashboard</text>
+
+      <rect x="152" y="0" width="125" height="30" rx="6" fill="#eceff1" stroke="#455a64" stroke-width="0.8"/>
+      <text x="214" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#455a64">SMS / Email Alerts</text>
+
+      <rect x="289" y="0" width="130" height="30" rx="6" fill="#eceff1" stroke="#455a64" stroke-width="0.8"/>
+      <text x="354" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#455a64">NHAI BMS · Integration</text>
+
+      <rect x="431" y="0" width="115" height="30" rx="6" fill="#eceff1" stroke="#455a64" stroke-width="0.8"/>
+      <text x="488" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#455a64">Digital Twin</text>
+
+      <rect x="558" y="0" width="110" height="30" rx="6" fill="#eceff1" stroke="#455a64" stroke-width="0.8"/>
+      <text x="613" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#455a64">Mobile App</text>
+
+      <rect x="680" y="0" width="150" height="30" rx="6" fill="#eceff1" stroke="#455a64" stroke-width="0.8"/>
+      <text x="755" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#455a64">Automated Reports · PDF</text>
+    </g>
+  </g>
+
+  <!-- Side annotations -->
+  <text x="18" y="530" text-anchor="middle" font-size="8" fill="#9aa0a6" transform="rotate(-90,18,530)">India-hosted cloud · MeitY compliant</text>
+  <text x="18" y="390" text-anchor="middle" font-size="8" fill="#9aa0a6" transform="rotate(-90,18,390)">< 10 ms failover</text>
+  <text x="18" y="260" text-anchor="middle" font-size="8" fill="#9aa0a6" transform="rotate(-90,18,260)">GPS time‑sync · ±1 ms</text>
+  <text x="18" y="116" text-anchor="middle" font-size="8" fill="#9aa0a6" transform="rotate(-90,18,116)">11 sensor categories</text>
+
+  <!-- Level indicators -->
+  <text x="940" y="116" text-anchor="middle" font-size="8" fill="#1a3c6d">Level‑3</text>
+  <text x="940" y="260" text-anchor="middle" font-size="8" fill="#2c5f2d">Level‑2</text>
+  <text x="940" y="390" text-anchor="middle" font-size="8" fill="#e65100">Level‑1</text>
+  <text x="940" y="525" text-anchor="middle" font-size="8" fill="#455a64">All levels</text>
+
+  <!-- Footer -->
+  <text x="480" y="700" text-anchor="middle" font-size="9" fill="#9aa0a6">Conceptual architecture — For illustrative purposes only. Does not represent internal implementation.</text>
+</svg>
